@@ -1,0 +1,45 @@
+{
+  "name": "projectname",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "aos": "^3.0.0-beta.6",
+    "bootstrap": "^4.3.1",
+    "cleave.js": "^1.5.3",
+    "daterangepicker": "^3.0.5",
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0",
+    "reset-css": "^4.0.1",
+    "select2": "^4.0.10",
+    "tooltipster": "^4.2.7",
+    "vanilla-lazyload": "^12.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel-minify": "^0.5.0",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-svgmin": "^2.2.0",
+    "node-sass": "^4.12.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "sass-module-importer": "^1.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "ISC",
+  "bugs": "",
+  "homepage": "",
+  "description": ""
+}

@@ -1,0 +1,298 @@
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+	-ms-overflow-style: scrollbar;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background: #0e0e0e;
+}
+body {
+	color: #bbbbbb;
+	font: 300 14px/1.2 'Roboto', sans-serif;
+	letter-spacing: .07em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+	margin: 0;
+	letter-spacing:.05em;
+}
+
+h1,
+.h1 {
+	font-size: 36px;
+	color: #fff;
+}
+h2,
+.h2 {
+	font-size: 24px;
+	color: #fff;
+}
+h3,
+.h3 {
+	font-size: 18px;
+}
+h4 {
+
+}
+h5 {
+
+}
+h6 {
+	
+}
+@include media-breakpoint-up(md) {
+	body {
+		font-size: 16px;
+	}
+	h1,
+	.h1 {
+		font-size: 48px;
+		color: #fff;
+	}
+	h2,
+	.h2 {
+		font-size: 36px;
+		color: #fff;
+	}
+}
+@include media-breakpoint-up(lg) {
+	body {
+		font-size: 18px;
+	}
+	h1,
+	.h1 {
+		font-size: 64px;
+		color: #fff;
+	}
+	h2,
+	.h2 {
+		font-size: 48px;
+		color: #fff;
+	}
+	h3,
+	.h3 {
+		font-size: 24px;
+	}
+}
+p {
+	margin: 0 0 2.75em;
+}
+a {
+	color: #5CE02E;;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active,
+a:hover {
+	outline: 0;
+}
+b,
+strong {
+	font-weight: 700;
+}
+i,
+em {
+	font-style: italic;
+}
+img {
+	border: none;
+	display: block;
+	max-width: 100%;
+}
+img[data-src],
+img[data-srcset] {
+	display: block;
+	min-height: 1px;
+}
+td,
+th {
+	padding: 0;
+	text-align: left;
+	vertical-align: top;
+}
+hr {
+	border: none;
+	border-top: 1px solid #c6c6c6;
+	box-sizing: content-box;
+	height: 0;
+	margin-bottom: 16px;
+}
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+/* Form elements */
+::-webkit-input-placeholder {color:inherit; font-weight: inherit;}
+::-moz-placeholder          {color:inherit; font-weight: inherit;}
+:-moz-placeholder           {color:inherit; font-weight: inherit;}
+:-ms-input-placeholder      {color:inherit; font-weight: inherit;}
+
+label {
+	font-size: 16px; 
+	line-height: 1.25; 
+	display: block;
+}
+
+input,
+select,
+textarea {
+	background-color: transparent;
+	border:1px solid transparent;
+	border-bottom-color: #666; 
+	color: #fff; 
+	font: 400 20px/1 'Roboto', sans-serif;
+	letter-spacing: .05em;
+	padding: 7px 4px; 
+	text-overflow: ellipsis;
+	width: 100%;
+}
+input:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+	border-bottom-color:#5CE02E;
+}
+textarea {
+	
+}
+
+/* Helpers */
+.text-nowrap {
+	white-space: nowrap;
+}
+.fw-100 {
+	font-weight: 100;
+}
+.fw-300 {
+	font-weight: 300;
+}
+
+@media (min-width: 1440px) {
+	.d-xxl-none {
+		display: none !important;
+	}
+	.d-xxl-block {
+		display: block !important;
+	}
+}
+
+/* Responsive images */
+.image-wrapper {
+	position: relative;
+	padding-bottom: 100%;
+}
+
+.image-wrapper img {
+	position: absolute;
+	//width: 100%;
+	left: 50%;
+	transform:translateX(-50%);
+	top: 0;
+}
+
+/* Clearfix */
+.clr {
+	clear: both;
+}
+.cf {
+	display: block;
+	&:after{
+		clear:both; 
+		content:'.'; 
+		display:block; 
+		font-size:0; 
+		height:0; 
+		line-height: 0;
+		visibility:hidden;
+	}
+}
+
+.app h1:last-child,
+.app h2:last-child,
+.app h3:last-child,
+.app p:last-child,
+.app ol:last-child,
+.app ul:last-child,
+.app table:last-child {
+	margin-bottom: 0;
+}
+
+@include media-breakpoint-up(md) {
+	
+}
+@include media-breakpoint-up(lg) {
+	
+}
+
+.container {
+	width: 100%;
+	max-width: 1280px;
+	padding: 0 20px;
+	position: relative;
+}
+
+@include media-breakpoint-up(md) {
+	.container {
+		max-width: 1300px;
+		padding: 0 30px;
+	}
+}
+
+/* Background */
+.bg {
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.bg-contain {
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+/* Cover */
+.cover {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+/* Icons */
+.icon {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	fill:#fff;
+	transition:fill .15s;
+}
+
+@include media-breakpoint-up(md) {
+	.icon {
+		width: 30px;
+		height: 30px;
+	}
+}
+
+/* Text */
+.text-center {text-align: center;}
+.text-right {text-align: right;}
+.text-nowrap {white-space: nowrap;}

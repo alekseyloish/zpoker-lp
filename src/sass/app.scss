@@ -1,0 +1,20 @@
+@import 'reset-css';
+
+@import "bootstrap/scss/_functions.scss";
+@import "bootstrap/scss/_variables.scss";
+@import "bootstrap/scss/_mixins.scss";
+@import "bootstrap/scss/_grid.scss";
+@import "bootstrap/scss/utilities/_display.scss";
+@import "bootstrap/scss/utilities/_flex.scss";
+//@import "aos/dist/aos.css";
+//@import "select2/dist/css/select2.css";
+//@import "daterangepicker/daterangepicker.css";
+//@import "tooltipster/dist/css/tooltipster.bundle.css";
+
+@import './partials/general';
+
+@import './partials/header';
+@import './partials/footer';
+@import './partials/content';
+
+@import './partials/print';
