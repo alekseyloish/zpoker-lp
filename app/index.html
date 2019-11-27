@@ -1,0 +1,563 @@
+<!DOCTYPE HTML>
+<html lang="nl">
+<head>
+<title>Projectname</title>
+<meta charset="utf-8">
+<meta name="theme-color" content="#0E0E0E">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/app.js"></script>
+<style type="text/css">
+	.list { list-style: decimal; margin:0 0 20px 40px; padding: 0;}
+	.list li {margin-bottom: 1em;}
+</style>
+</head>
+<body>
+	<div id="app" class="app">
+		<div class="container" style="padding: 40px;">
+			<div class="row">
+				<div class="col">
+					<h3 style="margin:0 0 20px 40px;">Pages</h3>
+					<ol class="list">
+						<li><a href="main.html" target="_blank">Main</a></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup d-flex flex-column align-items-end">
+		<div class="popup_close_trigger" data-popup-close="true"><i></i></div>
+		<div id="popup" class="popup_inner d-flex flex-column flex-grow-1">
+			<!-- Popup content will be loaded here -->
+		</div>
+	</div>
+	<div class="popup_overlay"></div>
+	<!-- Popups -->
+	<div class="d-none">
+		<section id="password-recovery" class="d-flex flex-grow-1">
+			<div class="popup_content d-flex flex-column flex-grow-1">
+				<header class="popup_header">
+					<h2>Password recovery</h2>
+				</header>
+				<div class="popup_body flex-grow-1">
+					<form action="#">
+						<div class="infobox">
+							<svg class="icon"><use xlink:href="/images/icons/icons.svg#info"></use></svg>
+							<span>Enter the mail</span>
+						</div>
+						<div class="infobox">
+							<svg class="icon"><use xlink:href="/images/icons/icons.svg#info"></use></svg>
+							<span>Enter the mail and phone number you provided when registering with Investizo.com</span>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p1-f1">Enter e-mail or mobile phone number</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p1-f1" id="p1-f1" placeholder="E-mail or number phone...">
+							</div>
+							<div class="form_info">
+								Enter the mail and phone number you provided when registering with Investizo.com
+							</div>
+						</div>
+						<div class="form_row">
+							<button class="btn submit btn-secondary" type="submit">send password</button>
+						</div>
+					</form>
+				</div>
+				<footer class="popup_footer d-flex justify-content-end">
+					<svg class="icon"><use xlink:href="/images/icons/icons.svg#lock"></use></svg>
+				</footer>
+			</div>
+		</section>
+		<section id="confirm-code" class="d-flex flex-grow-1">
+			<div class="bg bg-contain" style="background-image:url(/images/phone.svg)"></div>
+			<div class="popup_content d-flex flex-column flex-grow-1">
+				<header class="popup_header">
+					<h2>Confirm code from sms</h2>
+				</header>
+				<div class="popup_body flex-grow-1">
+					<form action="#">
+						<div class="form_row">
+							<div class="code_card">
+								<div class="form_label">
+									<label for="p2-f1">Enter code</label>
+								</div>
+								<div class="form_field">
+									<input type="text" name="p2-f1" id="p2-f1" placeholder="00-00-00">
+								</div>
+							</div>
+						</div>
+						<div class="form_row">
+							<button class="btn submit btn-secondary" type="submit">confirm</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<section id="credit-card" class="d-flex flex-grow-1">
+			<div class="popup_content d-flex flex-column flex-grow-1">
+				<header class="popup_header">
+					<h2>Credit card</h2>
+				</header>
+				<div class="popup_body flex-grow-1">
+					<form action="#">
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p3-f1">Card</label>
+							</div>
+							<div class="form_field">
+								<div class="selectbox">
+									<select name="p3-f1" id="p3-f1" data-placeholder="Name card">
+										<option value=""></option>
+										<option value="1">Option #1</option>
+										<option value="2">Option #2</option>
+										<option value="3">Option #3</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<p>Specify card details, <br>with which payment will be made</p>
+						<div class="credit_card">
+							<div class="form_row">
+								<div class="form_field">
+									<input type="text" name="p3-f2" id="p3-f2" placeholder="Number card">
+								</div>
+							</div>
+							<div class="d-flex align-items-end justify-content-between">
+								<div class="form_row form_row_short">
+									<div class="form_label">
+										<label for="p3-f3">Month / Year</label>
+									</div>
+									<div class="form_field">
+										<input type="text" name="p3-f3" id="p3-f3" placeholder="00  /  00">
+									</div>
+								</div>
+								<div class="form_row form_row_short">
+									<div class="form_field">
+										<input type="text" name="p3-f4" id="p3-f4" placeholder="CVV">
+									</div>
+									<div class="tooltip"><svg class="icon icon_help"><use xlink:href="/images/icons/icons.svg#help"></use></svg></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form_row">
+									<div class="form_label">
+										<label for="p3-f5">Amount</label>
+									</div>
+									<div class="form_field">
+										<input type="text" name="p3-f5" id="p3-f5" placeholder="2500">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-5 offset-md-1">
+								<div class="form_row">
+									<div class="form_label">
+										<label for="p3-f6">Currency</label>
+									</div>
+									<div class="form_field">
+										<div class="selectbox">
+											<select name="p3-f6" id="p3-f6" data-placeholder="">
+												<option value="1" selected>Euro</option>
+												<option value="2">Option #2</option>
+												<option value="3">Option #3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form_row d-md-none">
+							<div class="form_info d-flex">
+								<svg class="icon icon_warning"><use xlink:href="/images/icons/icons.svg#warning"></use></svg>
+								<ol>
+									<li>The minimum amount that can be withdrawn to a card is 200.</li>
+									<li>It takes 3-4 business days between when our request for withdrawal is sent (status changed to "Transferred") to the actual transfer of funds to the card.</li>
+									<li>The payment system may refuse to transfer funds to a card after the transaction is complete. In this case, your funds will be returned to your account on the website..</li>
+									<li>If the card information is deleted before the request status changes to "Transferred," the funds will not be transferred.</li>
+								</ol>
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p3-f7">Confirm your agreement with our system's rules:</label>
+							</div>
+							<div class="form_field">
+								<div class="checkbox">
+									<input type="checkbox" name="p3-f7" id="p3-f7">
+									<label for="p3-f7">I agree with the terms of the <a href="#">Agreement</a> and the <a href="#">Agent agreement</a> and understand that the offers of our system members may change while replenishing the account.</label>
+								</div>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col">
+								<div class="form_row d-flex">
+									<button class="btn submit btn-secondary flex-grow-1 flex-md-grow-0" type="submit">Deposit</button>
+								</div>
+							</div>
+							<div class="col-md-auto flex-md-grow-0">
+								<div class="form_row form_row_save_billing ">
+									<div class="form_field">
+										<div class="checkbox">
+											<input type="checkbox" name="p3-f8" id="p3-f8">
+											<label for="p3-f8">Save billing information for future purchases</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form_row form_row_last d-none d-md-block">
+							<div class="form_info d-flex">
+								<svg class="icon icon_warning"><use xlink:href="/images/icons/icons.svg#warning"></use></svg>
+								<p>Enter the amount you want to deposit into your account and click on the "Deposit" button. You will be redirected to the payment system site to complete the payment. A fee will be charged in accordance with the fees of the selected payment system.</p>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<section id="bank-transfer" class="d-flex flex-grow-1">
+			<div class="popup_content d-flex flex-column flex-grow-1">
+				<header class="popup_header">
+					<h2>Bank transfer</h2>
+				</header>
+				<div class="popup_body flex-grow-1">
+					<form action="#">
+						<div class="infobox">
+							<svg class="icon"><use xlink:href="/images/icons/icons.svg#info"></use></svg>
+							<span>The term of enrollment is up to 3 business days. <br>Check with your bank.</span>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p4-f1">Получатель</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p4-f1" id="p4-f1" placeholder="Investizo Bank (AO)">
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p4-f2">ИНН</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p4-f2" id="p4-f2" placeholder="3123011520">
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p4-f3">Банк получателя</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p4-f3" id="p4-f3" placeholder="Investizo Bank (AO)">
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p4-f4">БИК</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p4-f4" id="p4-f4" placeholder="044525416">
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p4-f5">КПП</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p4-f5" id="p4-f5" placeholder="772601001">
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p4-f6">Счет</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p4-f6" id="p4-f6" placeholder="47416810600000000004">
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p4-f7">Корр. счет</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p4-f7" id="p4-f7" placeholder="30101810645250000416 ">
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p4-f8">Назначение платежа</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p4-f8" id="p4-f8" placeholder="Пополнение Investizo Wallet ">
+							</div>
+						</div>
+						<div class="form_row d-flex justify-content-end">
+							<a href="#" class="d-flex align-items-center print_trigger">
+								<svg class="icon"><use xlink:href="/images/icons/icons.svg#print"></use></svg>
+								<span>Print requisites for transfer</span>
+							</a>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+		</section>
+		<section id="cryptocurrency" class="d-flex flex-grow-1">
+			<div class="popup_content d-flex flex-column flex-grow-1">
+				<header class="popup_header">
+					<h2>Cryptocurrency</h2>
+				</header>
+				<div class="popup_body flex-grow-1">
+					<form action="#">
+						<div class="infobox">
+							<svg class="icon"><use xlink:href="/images/icons/icons.svg#info"></use></svg>
+							<span>If you change the exchange rate during the processing of the payment, the amount will be recalculated at the new rate</span>
+						</div>
+						<div class="row">
+							<div class="col-md-7">
+								<div class="form_row">
+									<div class="form_label">
+										<label for="p5-f1">Amount receivable</label>
+									</div>
+									<div class="form_field">
+										<input type="text" name="p5-f1" id="p5-f1" placeholder="50000">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 offset-md-1">
+								<div class="form_row">
+									<div class="form_label">
+										<label for="p5-f2">Currency</label>
+									</div>
+									<div class="form_field">
+										<div class="selectbox">
+											<select name="p5-f2" id="p5-f2" data-placeholder="">
+												<option value="1" selected>RUB</option>
+												<option value="2">Option #2</option>
+												<option value="3">Option #3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p5-f3">Exchange rate</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p5-f3" id="p5-f3" placeholder="520795.89 RUB/BTC">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-7">
+								<div class="form_row">
+									<div class="form_label">
+										<label for="p5-f4">Amount receivable</label>
+									</div>
+									<div class="form_field">
+										<input type="text" name="p5-f4" id="p5-f4" placeholder="0.09600690">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 offset-md-1">
+								<div class="form_row">
+									<div class="form_label">
+										<label for="p5-f5">Currency</label>
+									</div>
+									<div class="form_field">
+										<div class="selectbox">
+											<select name="p5-f5" id="p5-f5" data-placeholder="">
+												<option value="1" selected>BTC</option>
+												<option value="2">Option #2</option>
+												<option value="3">Option #3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p5-f6">Wallet address</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p5-f6" id="p5-f6" placeholder="3JeRpm6nQNmNquhJD7NTvJ9jkmTifeuwpr">
+							</div>
+						</div>
+						<div class="form_row form_row_last">
+							<div class="qr_trigger"><img src="/images/qr.png" alt=""></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<section id="identity-verification" class="d-flex flex-grow-1">
+			<div class="popup_content d-flex flex-column flex-grow-1">
+				<header class="popup_header">
+					<h2>Identity verification</h2>
+				</header>
+				<div class="popup_body flex-grow-1">
+					<div class="infobox">
+						<span>To verify your first and last name, download one of the following documents:</span>
+					</div>
+					<div class="documents">
+						<ul>
+							<li><a href="#">Passport</a></li>
+							<li><a href="#">Driver's license</a> <small>(both sides)</small></li>
+						</ul>
+					</div>
+					<div class="requirements">
+						<p>Requirements for the document:</p>
+						<ul>
+							<li>Сlear color image <small>(JPG, JPEG, GIF, PNG, PDF no more 8mb)</small></li>
+							<li>Size over 800 by 600 pixels</li>
+							<li>No hidden parts</li>
+						</ul>
+					</div>
+					<form action="#">
+						<div class="form_row">
+							<div class="form_info d-flex align-items-center">
+								<svg class="icon icon_warning"><use xlink:href="/images/icons/icons.svg#warning"></use></svg>
+								<p>Attention, we do not re-register accounts of persons under the age of 18, according to our rules of service.</p>
+							</div>
+						</div>
+						<div class="form_row">
+							<button class="btn submit btn-progress" type="submit"><span class="progress" style="width: 50%;"></span><span>upload document</span></button>
+						</div>
+					</form>
+				</div>
+				<footer class="popup_footer d-flex justify-content-end">
+					<svg class="icon"><use xlink:href="/images/icons/icons.svg#passport"></use></svg>
+				</footer>
+			</div>
+		</section>
+		<section id="address-verification" class="d-flex flex-grow-1">
+			<div class="popup_content d-flex flex-column flex-grow-1">
+				<header class="popup_header">
+					<h2>Address verification</h2>
+				</header>
+				<div class="popup_body flex-grow-1">
+					<div class="infobox">
+						<span>To verify your first and last name, download one of the following documents:</span>
+					</div>
+					<div class="documents">
+						<ul>
+							<li><span class="color-green">Receipt for utility payments</span> <small>(gas, plumbing, electricity)</small></li>
+							<li><span class="color-green">Receipt for communication services</span> <small>(Internet, landline or cell phone)</small></li>
+							<li><span class="color-green">Bank card account statement</span></li>
+							<li><span class="color-green">Bank confirmation of an open account in your name</span></li>
+							<li><span class="color-green">Registration page from the passport</span></li>
+							<li><span class="color-green">Tax notice</span></li>
+							<li><span class="color-green">Car Registration Certificate</span> <small>(both sides)</small></li>
+						</ul>
+						<p>The document must contain the name and surname, address of residence and be no older than 3 months (exception: the stamp of registration in the passport and the address of residence indicated in the driver's license).</p>
+					</div>
+					<div class="requirements">
+						<p>Requirements for the document:</p>
+						<ul>
+							<li>Сlear color image <small>(JPG, JPEG, GIF, PNG, PDF no more 8mb)</small></li>
+							<li>Size over 800 by 600 pixels</li>
+							<li>No hidden parts</li>
+						</ul>
+					</div>
+					<form action="#">
+						<div class="form_row">
+							<div class="form_info d-flex align-items-center">
+								<svg class="icon icon_warning"><use xlink:href="/images/icons/icons.svg#warning"></use></svg>
+								<p>Attention, we do not re-register accounts of persons under the age of 18, according to our rules of service.</p>
+							</div>
+						</div>
+						<div class="form_row">
+							<button class="btn submit btn-secondary" type="submit">upload document</button>
+						</div>
+					</form>
+				</div>
+				<footer class="popup_footer d-flex justify-content-end">
+					<svg class="icon"><use xlink:href="/images/icons/icons.svg#adress"></use></svg>
+				</footer>
+			</div>
+		</section>
+		<section id="phone-verification" class="d-flex flex-grow-1">
+			<div class="popup_content d-flex flex-column flex-grow-1">
+				<header class="popup_header">
+					<h2>Phone number verification</h2>
+				</header>
+				<div class="popup_body flex-grow-1">
+					<form action="#">
+						<div class="infobox">
+							<span>To verify a mobile phone number, you need to specify it in a special form below and click the Verify button. After that, within a few minutes, and maybe seconds, you will receive an SMS with a 6-digit code.</span>
+						</div>
+						<div class="row">
+							<div class="col-md-5">
+								<div class="form_row">
+									<div class="form_label">
+										<label for="p8-f1">Country</label>
+									</div>
+									<div class="form_field">
+										<div class="selectbox">
+											<select name="p8-f1" id="p8-f1" data-placeholder="">
+												<option value="1" selected>Malta</option>
+												<option value="2">Option #2</option>
+												<option value="3">Option #3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 offset-md-1">
+								<div class="form_row">
+									<div class="form_label">
+										<label for="p8-f2">Phone</label>
+									</div>
+									<div class="form_field">
+										<input type="text" name="p8-f2" id="p8-f2" placeholder="+7 900 00 00 000">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form_row">
+							<button class="btn submit btn-secondary" type="submit">verification</button>
+						</div>
+					</form>
+				</div>
+				<footer class="popup_footer d-flex justify-content-end">
+					<svg class="icon"><use xlink:href="/images/icons/icons.svg#phone"></use></svg>
+				</footer>
+			</div>
+		</section>
+		<section id="email-verification" class="d-flex flex-grow-1">
+			<div class="popup_content d-flex flex-column flex-grow-1">
+				<header class="popup_header">
+					<h2>E-mail verification</h2>
+				</header>
+				<div class="popup_body flex-grow-1">
+					<form action="#">
+						<div class="infobox">
+							<span>To verify a mobile phone number, you need to specify it in a special form below and click the Verify button. After that, within a few minutes, and maybe seconds, you will receive an SMS with a 6-digit code.</span>
+						</div>
+						<div class="form_row">
+							<div class="form_label">
+								<label for="p9-f1">E-mail</label>
+							</div>
+							<div class="form_field">
+								<input type="text" name="p9-f1" id="p9-f1" placeholder="mail@mail.com">
+							</div>
+						</div>
+						<div class="form_row">
+							<button class="btn submit btn-secondary" type="submit">verification</button>
+						</div>
+					</form>
+				</div>
+				<footer class="popup_footer d-flex justify-content-end">
+					<svg class="icon"><use xlink:href="/images/icons/icons.svg#email"></use></svg>
+				</footer>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
