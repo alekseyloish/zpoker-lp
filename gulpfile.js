@@ -22,7 +22,8 @@ const path = {
 		css:  'app/css/',
 		img:  'app/images/',
 		svg:  'app/images/svg',
-		icons:'app/images/icons'
+		icons:'app/images/icons',
+		fonts:'app/fonts/',
 	},
 	src: {
 		html: 'src/*.html',
@@ -30,7 +31,8 @@ const path = {
 		css:  'src/sass/app.scss',
 		img:  'src/images/*.*',
 		svg:  'src/images/svg/*.svg',
-		icons:'src/images/icons/*.svg'
+		icons:'src/images/icons/*.svg',
+		fonts:'src/fonts/**/*.*',
 	},
 	watch: {
 		html: 'src/**/*.html',
@@ -38,7 +40,8 @@ const path = {
 		css:  'src/sass/**/*.scss',
 		img:  'src/images/*.*',
 		svg:  'src/images/svg/*.svg',
-		icons:'src/images/icons/*.svg'
+		icons:'src/images/icons/*.svg',
+		fonts:'src/fonts/**/*.*',
 	},
 	clean: './app'
 };
@@ -48,6 +51,11 @@ function html(){
 		.src(path.src.html)
 		.pipe(rigger())
 		.pipe(gulp.dest(path.app.html))
+}
+function fonts(){
+	return gulp
+		.src(path.src.fonts)
+		.pipe(gulp.dest(path.app.fonts));
 }
 function images(){
 	return gulp
@@ -97,6 +105,7 @@ function css(){
 }
 function build(){
 	gulp.watch(path.watch.html, html);
+	gulp.watch(path.watch.fonts, fonts);
 	gulp.watch(path.watch.img, images);
 	gulp.watch(path.watch.svg, svg);
 	gulp.watch(path.watch.icons, icons);
@@ -104,6 +113,6 @@ function build(){
 	gulp.watch(path.watch.css, css);
 }
 
-const watch = gulp.series(html, images, svg, icons, css, scripts, build);
+const watch = gulp.series(html, fonts, images, svg, icons, css, scripts, build);
 
 gulp.task('watch', watch);

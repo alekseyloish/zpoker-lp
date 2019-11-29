@@ -5,6 +5,49 @@
 	min-height: 100vh;
 }
 
+
+.main-hero {
+	position: relative;
+	min-height: 600px;
+	padding-top: 75px;
+	background-image: url(../images/bg-main-hero.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	.logo {
+		width: 459px;
+		margin: 0 auto 20px;
+	}
+
+	.chips {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.subscribe-section {
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 60px;
+	text-align: center;
+
+	.inner {
+		max-width: 910px;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin: 0 auto;
+	}
+
+	.heading {
+		font-size: 18px;
+		line-height: 1;
+		margin-bottom: 40px;
+		color: #f0eada;
+	}
+}
+
+
 @include media-breakpoint-up(sm) {
 	
 }
