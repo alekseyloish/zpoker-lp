@@ -250,6 +250,26 @@
   }
 }
 
+.chips {
+
+  .chips-item {
+    background-image: url(../images/bg-chips-item.jpg);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .media-wrap {
+      margin: 15px 0;
+
+      video {
+        filter: blur(0);
+      }
+    }
+  }
+}
+
 
 @include media-breakpoint-up(sm) {
 	

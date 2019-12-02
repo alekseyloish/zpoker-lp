@@ -2,6 +2,32 @@
 /* Footer */
 /**********/
 
+
+.footer_main {
+  position: relative;
+  padding: 60px 0 40px;
+
+  .support {
+    text-align: center;
+    font-family: CovesLight;
+    color: #a49875;
+    font-size: 18px;
+    line-height: 1.4;
+
+    a {
+      font-family: CovesLight;
+      text-decoration: none;
+      color: #a49875;
+
+      &:hover {
+        text-decoration: underline;
+        color: inherit;
+      }
+    }
+  }
+}
+
+
 @include media-breakpoint-up(sm) {
 	
 }
