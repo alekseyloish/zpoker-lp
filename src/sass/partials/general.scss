@@ -17,6 +17,7 @@ body {
 	font: 300 16px/1.2 'HelveticaLight', sans-serif;
 	
 }
+
 h1,
 h2,
 h3,
@@ -151,21 +152,21 @@ label {
 input,
 select,
 textarea {
-	background-color: transparent;
-	border:1px solid transparent;
-	border-bottom-color: #666; 
-	color: #fff; 
-	font: 400 20px/1 'Roboto', sans-serif;
-	letter-spacing: .05em;
-	padding: 7px 4px; 
-	text-overflow: ellipsis;
-	width: 100%;
+	//background-color: transparent;
+	//border:1px solid transparent;
+	//border-bottom-color: #666;
+	//color: #fff;
+	//font: 400 20px/1 'Roboto', sans-serif;
+	//letter-spacing: .05em;
+	//padding: 7px 4px;
+	//text-overflow: ellipsis;
+	//width: 100%;
 }
 input:focus,
 select:focus,
 textarea:focus {
 	outline: none;
-	border-bottom-color:#5CE02E;
+	//border-bottom-color:#5CE02E;
 }
 textarea {
 	

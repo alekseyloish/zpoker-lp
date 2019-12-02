@@ -1,0 +1,39 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="139px" height="139px">
+<defs>
+<filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="139px" height="139px"  >
+    <feOffset in="SourceAlpha" dx="-7.272" dy="13.119" />
+    <feGaussianBlur result="blurOut" stdDeviation="4.472" />
+    <feFlood flood-color="rgb(0, 0, 0)" result="floodOut" />
+    <feComposite operator="atop" in="floodOut" in2="blurOut" />
+    <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+    <feMerge>
+    <feMergeNode/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+<filter id="Filter_1">
+    <feOffset in="SourceAlpha" dx="-0.97" dy="1.749" />
+    <feGaussianBlur result="blurOut" stdDeviation="1" />
+    <feFlood flood-color="rgb(192, 167, 89)" result="floodOut" />
+    <feComposite operator="out" in="floodOut" in2="blurOut" result="compOut" />
+    <feComposite operator="in" in="compOut" in2="SourceAlpha" />
+    <feComponentTransfer><feFuncA type="linear" slope="0.5"/></feComponentTransfer>
+    <feBlend mode="normal" in2="SourceGraphic" />
+</filter>
+<linearGradient id="PSgrad_0" x1="0%" x2="0%" y1="100%" y2="0%">
+  <stop offset="0%" stop-color="rgb(39,16,39)" stop-opacity="0.78" />
+  <stop offset="100%" stop-color="rgb(244,239,180)" stop-opacity="0.5475288" />
+</linearGradient>
+
+</defs>
+<g filter="url(#Filter_0)">
+<g filter="url(#Filter_1)">
+<path fill-rule="evenodd"  fill="rgb(164, 152, 117)"
+ d="M76.000,6.000 C103.614,6.000 126.000,28.386 126.000,56.000 C126.000,83.614 103.614,106.000 76.000,106.000 C48.386,106.000 26.000,83.614 26.000,56.000 C26.000,28.386 48.386,6.000 76.000,6.000 Z"/>
+</g></g>
+<path fill="url(#PSgrad_0)"
+ d="M76.000,6.000 C103.614,6.000 126.000,28.386 126.000,56.000 C126.000,83.614 103.614,106.000 76.000,106.000 C48.386,106.000 26.000,83.614 26.000,56.000 C26.000,28.386 48.386,6.000 76.000,6.000 Z"/>
+</svg>
