@@ -63,7 +63,7 @@
         content: '';
         position: absolute;
         height: 60px;
-        width: 500px;
+        width: 480px;
         box-shadow: 0 0 4px rgba(255, 48, 189, 0.35);
         z-index: 1;
         left: 50%;
@@ -75,8 +75,9 @@
       position: relative;
       display: block;
       width: 100%;
+      max-width: 500px;
       height: 60px;
-      margin-bottom: 40px;
+      margin: 0 auto 40px;
       color: #ababab;
       font-family: CovesLight;
       font-size: 20px;
@@ -84,6 +85,14 @@
       border: none;
       background-color: #000000;
       z-index: 2;
+
+      &.error {
+        outline: none;
+        border-bottom: 1px solid #af0014;
+        animation-name: input-error;
+        animation-duration: .5s;
+        animation-delay: 0.25s;
+      }
 	}
 	&__submit {
       display: inline-block;
