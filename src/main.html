@@ -31,17 +31,18 @@
                     <strong>5 tickets</strong> to SNG tournaments:
                 </div>
                 <div class="subscribe-form-wrapper">
-                    <form class="subscribe-form">
+                    <form class="subscribe-form" method="post">
                         <div class="subscribe-form__input-wrap">
                             <input type="text" 
-                                id="subscribe_email" name="subscribe_email"
+                                id="subscriber_email" name="subscriber_email"
                                 placeholder="Enter your email"
+                                required
                                 class="subscribe-form__input" />
                         </div>
-                        <button type="submit" class="subscribe-form__submit">Pre Sign-Up</button>
+                        <button type="submit" id="subscribe_submit" class="subscribe-form__submit">Pre Sign-Up</button>
                         <div class="subscribe-form__checkbox-wrap">
                             <label class="subscribe-form__checkbox">
-                                <input type="checkbox" id="subscribe_checkbox" name="subscribe_checkbox" checked >
+                                <input type="checkbox" id="subscribe_checkbox" name="get_promotional" checked >
                                 <i></i>
                                 <span class="text">I want ro recieve promotional emails</span>
                             </label>

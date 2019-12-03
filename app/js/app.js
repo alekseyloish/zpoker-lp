@@ -10762,7 +10762,31 @@
 	//import Tooltipster from 'tooltipster';
 	//select2($);
 
-	$(document).ready(function () {});
+	$(document).ready(function () {
+	  $('#subscribe_submit').on('click', function (e) {
+	    /*e.preventDefault();
+	    		var email = $('#subscriber_email').val();
+	    var formData = $('.subscribe-form').serializeArray();
+	    		console.log( formData );
+	    		if ( email !== '' ) {
+	    			$.ajax({
+	    		type: 'POST',
+	    		url: 'http://api.zpoker.uk/public/pre_sign_up',
+	    		data: formData,
+	    		crossDomain: true,
+	    		dataType: 'jsonp',
+	    		success: function(data) {
+	    			console.log(data);
+	    		},
+	    		failure: function(errMsg) {
+	    			console.log(errMsg);
+	    		}
+	    	});
+	    		} else {
+	    	console.log('Email field is empty!');
+	    }*/
+	  });
+	});
 	$(window).on('load', function () {
 	  aos.init();
 	});
