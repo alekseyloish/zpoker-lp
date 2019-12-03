@@ -93,7 +93,7 @@ $(document).ready(function () {
 
 			$.ajax({
 				type: 'POST',
-				url: 'http://api.zpoker.uk/public/pre_sign_up',
+				url: 'api.zpoker.uk/public/pre_sign_up',
 				data: formData,
 				// crossDomain: true,
 				dataType: 'json',

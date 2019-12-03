@@ -21,8 +21,9 @@
 	}
 
 	.chips {
-		display: flex;
-		justify-content: center;
+		display: block;
+        max-width: 496px;
+        margin: 0 auto;
 	}
 
   @include media-breakpoint-up(md) {
@@ -42,7 +43,7 @@
 	text-align: center;
 
 	.inner {
-		max-width: 910px;
+		max-width: 930px;
 		padding-left: 15px;
 		padding-right: 15px;
 		margin: 0 auto;

@@ -143,6 +143,11 @@ ul {
 :-moz-placeholder           {color:inherit; font-weight: inherit;}
 :-ms-input-placeholder      {color:inherit; font-weight: inherit;}
 
+:focus::-webkit-input-placeholder {opacity: 0; color: transparent}
+:focus::-moz-placeholder          {opacity: 0; color: transparent}
+:focus:-moz-placeholder           {opacity: 0; color: transparent}
+:focus:-ms-input-placeholder      {opacity: 0; color: transparent}
+
 label {
 	font-size: 16px; 
 	line-height: 1.25; 
