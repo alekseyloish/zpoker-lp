@@ -13,108 +13,53 @@ import AOS from 'aos';
 
 $(document).ready(function () {
 
-    (function($){
-        $.fn.serializeObject = function(){
-
-            var self = this,
-                json = {},
-                push_counters = {},
-                patterns = {
-                    "validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
-                    "key":      /[a-zA-Z0-9_]+|(?=\[\])/g,
-                    "push":     /^$/,
-                    "fixed":    /^\d+$/,
-                    "named":    /^[a-zA-Z0-9_]+$/
-                };
-
-
-            this.build = function(base, key, value){
-                base[key] = value;
-                return base;
-            };
-
-            this.push_counter = function(key){
-                if(push_counters[key] === undefined){
-                    push_counters[key] = 0;
-                }
-                return push_counters[key]++;
-            };
-
-            $.each($(this).serializeArray(), function(){
-
-                // Skip invalid keys
-                if(!patterns.validate.test(this.name)){
-                    return;
-                }
-
-                var k,
-                    keys = this.name.match(patterns.key),
-                    merge = this.value,
-                    reverse_key = this.name;
-
-                while((k = keys.pop()) !== undefined){
-
-                    // Adjust reverse_key
-                    reverse_key = reverse_key.replace(new RegExp("\\[" + k + "\\]$"), '');
-
-                    // Push
-                    if(k.match(patterns.push)){
-                        merge = self.build([], self.push_counter(reverse_key), merge);
-                    }
-
-                    // Fixed
-                    else if(k.match(patterns.fixed)){
-                        merge = self.build([], k, merge);
-                    }
-
-                    // Named
-                    else if(k.match(patterns.named)){
-                        merge = self.build({}, k, merge);
-                    }
-                }
-
-                json = $.extend(true, json, merge);
-            });
-
-            return json;
-        };
-    })(jQuery);
-
 	$('#subscribe_submit').on('click', function (e) {
 		e.preventDefault();
 
+		// General Email Regex (RFC 5322 Official Standard) (https://emailregex.com/)
+		let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 		let email = $('#subscriber_email').val();
-		//var formData = $('.subscribe-form').serializeArray();
-		let formData = $('.subscribe-form').serializeObject();
+        let formData = {};
+        formData.email = email;
 
-		console.log( formData );
+		if ( email !== '' && emailRegex.test(email) ) {
 
-		if ( email !== '' ) {
+            $.ajax({
+                type: 'POST',
+                url: 'https://api.zpoker.uk/public/pre_sign_up',
+                data: JSON.stringify(formData),
+                dataType: 'json',
+                success: function (data) {
+                    // console.log(data);
+                },
+                failure: function (errMsg) {
+                    // console.log(errMsg);
+                }
+            });
 
-			$.ajax({
-				type: 'POST',
-				url: 'https://api.zpoker.uk/public/pre_sign_up',
-				data: formData,
-				// crossDomain: true,
-				dataType: 'json',
-				success: function(data) {
-					console.log(data);
-				},
-				failure: function(errMsg) {
-					console.log(errMsg);
-				}
-			});
+            $('.subscribe-form').addClass('success');
+
+            setTimeout(function () {
+                $('.form-msg_success').addClass('active');
+            }, 600);
 
 		} else {
-			console.log('Email field is empty!');
-			$('.subscribe-form__input').addClass('error');
+			//$('.subscribe-form__input').addClass('error');
+			$('.form-msg_error').addClass('active');
 
-			setTimeout(function () {
-                $('.subscribe-form__input').removeClass('error');
-            }, 1000);
+			// setTimeout(function () {
+            //     $('.subscribe-form__input').removeClass('error');
+            // }, 1000);
 		}
 
 	});
+
+    $('.subscribe-form__input').on('keyup', function (e) {
+        if ( $(this).val() !== '' ) {
+            $('.form-msg_error').removeClass('active');
+        }
+    });
 
 });
 

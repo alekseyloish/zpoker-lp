@@ -64,70 +64,77 @@
 }
 
 .subscribe-form {
-	width: 100%;
+  position: relative;
+  width: 100%;
 
-	&__input-wrap {
-      position: relative;
+  &__input-wrap {
+    position: relative;
 
-      &:before {
-        content: '';
-        position: absolute;
-        height: 60px;
-        width: 480px;
-        box-shadow: 0 0 4px rgba(255, 48, 189, 0.35);
-        z-index: 1;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 74px;
-      }
-	}
-	&__input {
-      position: relative;
-      display: block;
-      width: 100%;
-      max-width: 500px;
+    &:before {
+      content: '';
+      position: absolute;
       height: 60px;
-      margin: 0 auto 40px;
-      color: #ababab;
-      font-family: CovesLight;
-      font-size: 20px;
-      text-align: center;
-      border: none;
-      background-color: #000000;
-      z-index: 2;
+      width: 480px;
+      box-shadow: 0 0 4px rgba(255, 48, 189, 0.35);
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 74px;
+    }
+  }
+  &__input {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: 60px;
+    margin: 0 auto 40px;
+    color: #ababab;
+    font-family: CovesLight;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: #000000;
+    z-index: 2;
 
-      &.error {
-        outline: none;
-        border-bottom: 1px solid #af0014;
-        animation-name: input-error;
-        animation-duration: .5s;
-        animation-delay: 0.25s;
-      }
-	}
-	&__submit {
-      display: inline-block;
-      width: 260px;
-      height: 32px;
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      color: #ffffff;
-      font-family: CovesBold;
-      font-size: 20px;
-      background: #279446;
-      text-shadow: 0 1px rgba(0, 0, 0, 0.15);
-      border: none;
+    &.error {
       outline: none;
-      padding-top: 2px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 4px rgba(39, 148, 70, 0.3);
-      cursor: pointer;
+      border-bottom: 1px solid #af0014;
+      animation-name: input-error;
+      animation-duration: .5s;
+      animation-delay: 0.25s;
+    }
+  }
+  &__submit {
+    display: inline-block;
+    width: 260px;
+    height: 32px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: CovesBold;
+    font-size: 20px;
+    background: #279446;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.15);
+    border: none;
+    outline: none;
+    padding-top: 2px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 4px rgba(39, 148, 70, 0.3);
+    cursor: pointer;
 
-      &:hover {
-        opacity: 0.9;
-      }
-	}
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #2da446;
+      box-shadow: 0 5px 10px rgba(45, 164, 70, 0.6);
+    }
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
 
   &__checkbox-wrap {
 
@@ -176,6 +183,61 @@
       font-family: CovesLight;
       font-size: 18px;
     }
+  }
+
+  &__input-wrap,
+  &__submit,
+  &__checkbox-wrap {
+    //transition: transform 0.5s, opacity 0.5s;
+  }
+
+  .form-msg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: CovesLight;
+
+    transition: all 0.2s;
+
+    &_success {
+      top: 60px;
+      font-size: 22px;
+      color: #a49875;
+
+      transform: translateY(20px);
+      opacity: 0;
+      visibility: hidden;
+
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &_error {
+      top: 100%;
+      font-size: 18px;
+      color: #c12059;
+
+      transform: translateY(40px);
+      opacity: 0;
+      visibility: hidden;
+
+      &.active {
+        transform: translateY(30px);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &.success &__input-wrap,
+  &.success &__submit,
+  &.success &__checkbox-wrap {
+    transition: transform 0.5s, opacity 0.5s;
+    transform: translateY(-20px);
+    opacity: 0;
   }
 }
 
