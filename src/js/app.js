@@ -55,6 +55,14 @@ $(document).ready(function () {
 
 	});
 
+    $('#subscribe_checkbox').on('click', function (e) {
+        if ( $(this).prop('checked') ) {
+            $('#subscribe_submit').removeClass('is-disabled');
+        } else {
+            $('#subscribe_submit').addClass('is-disabled');
+        }
+    });
+
     $('.subscribe-form__input').on('keyup', function (e) {
         if ( $(this).val() !== '' ) {
             $('.form-msg_error').removeClass('active');
