@@ -8,8 +8,8 @@
 
 .main-hero {
 	position: relative;
-	min-height: 425px;
-	padding-top: 60px;
+	min-height: 375px;
+	padding-top: 30px;
 	background-image: url(../images/bg-main-hero.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -27,8 +27,8 @@
 	}
 
   @include media-breakpoint-up(md) {
-    min-height: 600px;
-    padding-top: 75px;
+    min-height: 550px;
+    padding-top: 35px;
 
     .logo {
       width: 459px;
@@ -38,9 +38,13 @@
 
 .subscribe-section {
 	position: relative;
-	padding-top: 40px;
+	padding-top: 30px;
     margin-bottom: 100px;
 	text-align: center;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 40px;
+  }
 
 	.inner {
 		max-width: 930px;
@@ -53,8 +57,12 @@
 		font-family: Helvetica-4-Light;
 		font-size: 18px;
 		line-height: 1.3;
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 		color: #f0eada;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 40px;
+      }
 
 		strong {
 			font-family: Helvetica-7-Bold;
@@ -88,7 +96,7 @@
     width: 100%;
     max-width: 500px;
     height: 60px;
-    margin: 0 auto 40px;
+    margin: 0 auto 30px;
     color: #ababab;
     font-family: CovesLight;
     font-size: 20px;
@@ -121,7 +129,7 @@
     border: none;
     outline: none;
     padding-top: 2px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     box-shadow: 0 4px 4px rgba(39, 148, 70, 0.3);
     cursor: pointer;
     user-select: none;
@@ -216,7 +224,7 @@
     transition: all 0.2s;
 
     &_success {
-      top: 60px;
+      top: 40px;
       font-size: 22px;
       color: #a49875;
 
@@ -235,12 +243,12 @@
       font-size: 18px;
       color: #c12059;
 
-      transform: translateY(40px);
+      transform: translateY(30px);
       opacity: 0;
       visibility: hidden;
 
       &.active {
-        transform: translateY(30px);
+        transform: translateY(20px);
         opacity: 1;
         visibility: visible;
       }
@@ -405,6 +413,22 @@
 
     }
   }
+}
+
+
+.privacy-policy-container {
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 125px;
+    padding-bottom: 125px;
+  }
+}
+
+.plain-text {
+  font-size: 18px;
+  line-height: 1.25;
 }
 
 

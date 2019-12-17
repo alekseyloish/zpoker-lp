@@ -27,6 +27,7 @@ h6 {
 	font-weight: 700;
 	margin: 0;
 	letter-spacing:.05em;
+	font-family: CovesBold;
 }
 
 h1,
@@ -64,7 +65,13 @@ h6 {
 	h2,
 	.h2 {
 		font-size: 36px;
-		color: #fff;
+		color: #a49875;
+		margin-bottom: 20px;
+	}
+	h3,
+	.h3 {
+		margin-bottom: 15px;
+		margin-top: 25px;
 	}
 }
 @include media-breakpoint-up(lg) {
@@ -73,17 +80,18 @@ h6 {
 	}
 	h1,
 	.h1 {
-		font-size: 64px;
+		font-size: 48px;
 		color: #fff;
+		margin-bottom: 20px;
 	}
 	h2,
 	.h2 {
-		font-size: 48px;
-		color: #fff;
+		font-size: 32px;
+		//color: #fff;
 	}
 	h3,
 	.h3 {
-		font-size: 24px;
+		font-size: 22px;
 	}
 }
 p {
@@ -187,6 +195,25 @@ textarea {
 .fw-300 {
 	font-weight: 300;
 }
+
+
+.plain-text {
+
+	p {
+		font-size: 16px;
+		line-height: 1.2;
+		margin-bottom: 10px;
+		font-family: Helvetica-4-Light;
+
+		@include media-breakpoint-up(md) {
+			font-size: 18px;
+			line-height: 1.25;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+
 
 @media (min-width: 1440px) {
 	.d-xxl-none {
