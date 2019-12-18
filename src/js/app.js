@@ -1,5 +1,6 @@
 import './vendor/jquery-global.js';
 import AOS from 'aos';
+import lozad from 'lozad';
 
 //import LazyLoad from 'vanilla-lazyload';
 //import select2 from 'select2';
@@ -74,5 +75,8 @@ $(document).ready(function () {
 $(window).on('load', function (){
 
     AOS.init();
+
+    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
 
 });
